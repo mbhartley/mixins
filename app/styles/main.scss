@@ -51,24 +51,28 @@ body {
 }   
 
 @mixin photo {
+    
     width: 200px;
     height: 200px;
     margin-top: 30px;
     margin-right: 14px;
-}
+    transition: all ease-in-out 1s;
+
+    &:hover {
+      width: 230px;
+      height: 230px;
+      box-shadow: 5px 5px 8px rgb(30, 29, 35);
+    }
+  }
+
 
 .buffalo-photo-1, .buffalo-photo-2, .buffalo-photo-3, .buffalo-photo-4, 
 .buffalo-photo-5, .buffalo-photo-6, .buffalo-photo-7, .buffalo-photo-8 {
     @include photo;
-    transition: all 1s ease;
+    
 }
 
-.buffalo-photo-1:hover, .buffalo-photo-2:hover, .buffalo-photo-3:hover, .buffalo-photo-4:hover, 
-.buffalo-photo-5:hover, .buffalo-photo-6:hover, .buffalo-photo-7:hover, .buffalo-photo-8:hover {
-    width: 230px;
-    height: 230px;
-    box-shadow: 5px 5px 8px  rgb(30, 29, 35);
-}
+
 
 
 
