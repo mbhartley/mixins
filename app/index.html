@@ -47,6 +47,120 @@
     <img class="buffalo-photo-8" src="images/office-building.jpg">
   </div>
 </div>
+<br>
+<br>
+
+<div class="first-codetag">
+    <div class="container">
+        <pre><code>
+    body {
+    background: rgb(74, 67, 56);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    text-shadow: 3px 3px 3px rgb(30, 29, 35);
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+@mixin banner {
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: -18px;
+}
+
+@mixin album-name {
+    font-size: 38px;
+}
+
+@mixin album-category{
+    font-size: 24px;
+}
+
+@mixin photo-album {
+    height: 496px;
+    width: 100%;
+    box-shadow: 3px 3px 3px rgb(30, 29, 35);
+    background: #7d7e7d; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7d7e7d 0%, #e5dfbf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#e5dfbf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #7d7e7d 0%,#e5dfbf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #7d7e7d 0%,#e5dfbf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #7d7e7d 0%,#e5dfbf 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #7d7e7d 0%,#e5dfbf 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#e5dfbf',GradientType=0 ); /* IE6-9 */
+    }
+
+
+@mixin photo ($width, $height, $margin-top, $margin-right){
+    width: $width;
+    height: $height;
+    margin-top: $margin-top;
+    margin-right: $margin-right;
+    transition: all ease-in-out 1s;
+
+
+    &:hover {
+      width: 230px;
+      height: 230px;
+      box-shadow: 5px 5px 8px rgb(30, 29, 35);
+    }
+  }
+
+.buffalo-banner {
+    @include banner
+}
+
+.album-name {
+    @include album-name;
+}
+
+.album-category {
+    @include album-category
+}
+
+.photo-album {
+    @include photo-album;
+} 
+
+.buffalo-photo-1, .buffalo-photo-2, .buffalo-photo-3, .buffalo-photo-4, 
+.buffalo-photo-5, .buffalo-photo-6, .buffalo-photo-7, .buffalo-photo-8 {
+    @include photo (200px, 200px, 28px, 14px);   
+}
+
+/*CODE TAG*/
+.first-codetag {
+    height: 400px;
+    width: 960px;
+    margin-left: 130px;
+    background-color: white;
+    overflow: y-scroll;
+}
+
+.dallas-banner {
+    @include banner
+}
+
+.dallas-photo-album {
+    @include photo-album;
+} 
+
+.dallas-photo-1, .dallas-photo-2, .dallas-photo-3, .dallas-photo-4, 
+.dallas-photo-5, .dallas-photo-6, .dallas-photo-7, .dallas-photo-8,
+.dallas-photo-9, .dallas-photo-10, .dallas-photo-11, .dallas-photo-12 {
+    @include photo (120px, 120px, 28px, 12px);   
+}
+
+</code></pre>
+
+    </div>
+</div>
 
 <br>
 <br>

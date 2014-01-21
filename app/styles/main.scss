@@ -79,6 +79,17 @@ body {
     @include photo (200px, 200px, 28px, 14px);   
 }
 
+/*CODE TAG*/
+.first-codetag {
+    height: 400px;
+    width: 960px;
+    margin-left: 130px;
+    color: black;
+    text-shadow: none;
+    background-color: white;
+    overflow: scroll;
+}
+
 .dallas-banner {
     @include banner
 }
