@@ -8,27 +8,24 @@ body {
     position: relative;
 }
 
-
-.banner {
-    height: 100px;
-    margin-top: 30px;
-    margin-bottom:-18px;
-    
-}
-
-.album-name {
-    font-size: 38px;
-}
-
-.album-category {
-    font-size: 24px;
-}
-
-
 .container {
     width: 900px;
     margin: 0 auto;
     position: relative;
+}
+
+@mixin banner {
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: -18px;
+}
+
+@mixin album-name {
+    font-size: 38px;
+}
+
+@mixin album-category{
+    font-size: 24px;
 }
 
 @mixin photo-album {
@@ -46,17 +43,13 @@ body {
     }
 
 
-.buffalo-photo-album {
-    @include photo-album;
-}   
-
-@mixin photo {
-    
-    width: 200px;
-    height: 200px;
-    margin-top: 30px;
-    margin-right: 14px;
+@mixin photo ($width, $height, $margin-top, $margin-right){
+    width: $width;
+    height: $height;
+    margin-top: $margin-top;
+    margin-right: $margin-right;
     transition: all ease-in-out 1s;
+
 
     &:hover {
       width: 230px;
@@ -65,14 +58,40 @@ body {
     }
   }
 
+.buffalo-banner {
+    @include banner
+}
+
+.album-name {
+    @include album-name;
+}
+
+.album-category {
+    @include album-category
+}
+
+.photo-album {
+    @include photo-album;
+} 
 
 .buffalo-photo-1, .buffalo-photo-2, .buffalo-photo-3, .buffalo-photo-4, 
 .buffalo-photo-5, .buffalo-photo-6, .buffalo-photo-7, .buffalo-photo-8 {
-    @include photo;
-    
+    @include photo (200px, 200px, 28px, 14px);   
 }
 
+.dallas-banner {
+    @include banner
+}
 
+.dallas-photo-album {
+    @include photo-album;
+} 
+
+.dallas-photo-1, .dallas-photo-2, .dallas-photo-3, .dallas-photo-4, 
+.dallas-photo-5, .dallas-photo-6, .dallas-photo-7, .dallas-photo-8,
+.dallas-photo-9, .dallas-photo-10, .dallas-photo-11, .dallas-photo-12 {
+    @include photo (120px, 120px, 28px, 12px);   
+}
 
 
 
